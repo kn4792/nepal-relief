@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepal Flash Floods – Field Reports</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 28px 24px 8px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: normal;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 8px 0 0;
+      color: #888;
+      font-size: 0.95rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      min-height: 0;
+    }
+
+    .container {
+      border: 1px solid #222;
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .container > h2 {
+      margin: 0;
+      padding: 14px 20px;
+      font-weight: normal;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #222;
+    }
+
+    /* ---------- Reports (left, 33%) ---------- */
+    #reports { width: 33%; }
+
+    #reports ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      max-height: 75vh;
+    }
+    #reports li + li { border-top: 1px solid #1c1c1c; }
+    #reports a {
+      display: block;
+      padding: 14px 20px;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    #reports a:hover, #reports a:focus { background: #1a1a1a; }
+    #reports .date {
+      display: block;
+      margin-top: 3px;
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- Slideshow (right, 67%) ---------- */
+    #photos { width: 67%; }
+
+    .slideshow {
+      position: relative;
+      flex: 1;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    .slideshow img {
+      max-width: 100%;
+      max-height: 68vh;
+      object-fit: contain;
+      animation: fadeIn 0.8s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      font-size: 20px;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
+    .prev:hover, .next:hover { background: rgba(255,255,255,0.12); }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #222;
+    }
+    .tabs button {
+      flex: 1;
+      padding: 12px 20px;
+      font-family: inherit;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: #888;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tabs button:hover { background: #1a1a1a; color: #fff; }
+    .tabs button.active { color: #fff; border-bottom-color: #fff; }
+
+    .counter {
+      padding: 10px 20px;
+      text-align: center;
+      color: #888;
+      font-size: 0.85rem;
+      border-top: 1px solid #222;
+    }
+
+    /* ---------- Phones / narrow screens: stack the containers ---------- */
+    @media (max-width: 800px) {
+      main { flex-direction: column; padding: 12px; }
+      #reports, #photos { width: 100%; }
+      #reports ul { max-height: 45vh; }
+      .slideshow { min-height: 45vh; }
+      .slideshow img { max-height: 60vh; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nepal Flash Floods</h1>
+    <p>Field reports and photos from the relief effort, September 2026</p>
+  </header>
+
+  <main>
+    <!-- Container 1: reports. Add a new report = copy one <li> and add the PDF to reports/ -->
+    <section class="container" id="reports">
+      <h2>Field Reports</h2>
+      <ul>
+        <li><a href="reports/day-01-ground-report.pdf" target="_blank" rel="noopener">Day 1 – Flood Victim Holding Center<span class="date">3 September 2026</span></a></li>
+        <li><a href="reports/day-02-report.pdf" target="_blank" rel="noopener">Day 2 – Gerkhutar Holding Center<span class="date">4 September 2026</span></a></li>
+        <li><a href="reports/day-03-ground-team-report.pdf" target="_blank" rel="noopener">Day 3 – Ground Team, Betrawoti</a></li>
+        <li><a href="reports/day-04-ground-report.pdf" target="_blank" rel="noopener">Day 4 – Relief and Holding Center</a></li>
+        <li><a href="reports/day-05-field-survey-report.pdf" target="_blank" rel="noopener">Day 5 – Field Survey, Bidur Municipality<span class="date">7 September 2026</span></a></li>
+        <li><a href="reports/day-06-camp-2-report.pdf" target="_blank" rel="noopener">Day 6 – Camp 2<span class="date">8 September 2026</span></a></li>
+        <li><a href="reports/field-survey-coordination-report-10-sep-2026.pdf" target="_blank" rel="noopener">Field Survey &amp; Coordination Report<span class="date">10 September 2026</span></a></li>
+        <li><a href="reports/day-09-10-report.pdf" target="_blank" rel="noopener">Days 9 &amp; 10 – Camp 1, Betrawoti<span class="date">11–12 September 2026</span></a></li>
+        <li><a href="reports/day-07-basecamp-field-survey.pdf" target="_blank" rel="noopener">Day 7 – Field Survey from the Basecamp<span class="date">13 September 2026</span></a></li>
+        <li><a href="reports/13-sep-report.pdf" target="_blank" rel="noopener">Report from Camp 1, Betrawoti<span class="date">13 September 2026</span></a></li>
+        <li><a href="reports/14-20-sep-report.pdf" target="_blank" rel="noopener">Daily Field Report<span class="date">14 September 2026</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Container 2: photo slideshow with two sets. Add a photo = drop it in images/on-site or images/receipts and add its path to `sets` below -->
+    <section class="container" id="photos">
+      <h2>Photos</h2>
+      <div class="tabs">
+        <button class="active" data-set="onsite">On Site</button>
+        <button data-set="receipts">Receipts</button>
+      </div>
+      <div class="slideshow">
+        <button class="prev" aria-label="Previous photo">&#10094;</button>
+        <img id="slide" src="" alt="" />
+        <button class="next" aria-label="Next photo">&#10095;</button>
+      </div>
+      <div class="counter" id="counter"></div>
+    </section>
+  </main>
+
+  <script>
+    const sets = {
+      onsite: [
+        "images/on-site/01-on-site-20260916-wa0022.jpg",
+        "images/on-site/02-on-site-20260916-wa0025.jpg",
+        "images/on-site/03-on-site-20261006-wa0010.jpg",
+        "images/on-site/04-on-site-20261006-wa0012.jpg",
+        "images/on-site/05-on-site-20261006-wa0013.jpg",
+        "images/on-site/06-on-site-20261006-wa0014.jpg",
+        "images/on-site/07-on-site-20261006-wa0015.jpg",
+        "images/on-site/08-on-site-20261006-wa0016.jpg",
+        "images/on-site/09-on-site-20261006-wa0017.jpg",
+        "images/on-site/10-on-site-20261006-wa0018.jpg",
+        "images/on-site/11-on-site-20261006-wa0019.jpg",
+        "images/on-site/12-on-site-20261006-wa0020.jpg",
+        "images/on-site/13-on-site-20261006-wa0021.jpg",
+        "images/on-site/14-on-site-20261006-wa0022.jpg",
+        "images/on-site/15-on-site-20261006-wa0023.jpg",
+        "images/on-site/16-on-site-20261006-wa0026.jpg",
+        "images/on-site/17-on-site-20261006-wa0028.jpg",
+        "images/on-site/18-on-site-20261006-wa0029.jpg",
+        "images/on-site/19-on-site-20261006-wa0030.jpg",
+        "images/on-site/20-on-site-20261006-wa0031.jpg",
+        "images/on-site/21-on-site-20261006-wa0032.jpg",
+        "images/on-site/22-on-site-20261006-wa0033.jpg",
+        "images/on-site/23-on-site-20261006-wa0034.jpg",
+        "images/on-site/24-on-site-20261006-wa0035.jpg",
+        "images/on-site/25-on-site-20261006-wa0036.jpg",
+        "images/on-site/26-on-site-20261006-wa0038.jpg",
+        "images/on-site/27-on-site-20261006-wa0039.jpg",
+        "images/on-site/28-on-site-20261006-wa0040.jpg",
+        "images/on-site/29-on-site-20261006-wa0041.jpg",
+        "images/on-site/30-on-site-20261006-wa0043.jpg",
+        "images/on-site/31-on-site-20261006-wa0044.jpg"
+      ],
+      receipts: [
+        "images/receipts/01-receipt-20260916-wa0012.jpg",
+        "images/receipts/02-receipt-20260916-wa0015.jpg",
+        "images/receipts/03-receipt-20260916-wa0018.jpg",
+        "images/receipts/04-receipt-20260916-wa0021.jpg",
+        "images/receipts/05-receipt-20260916-wa0023.jpg",
+        "images/receipts/06-receipt-20260916-wa0024.jpg",
+        "images/receipts/07-receipt-20260916-wa0026.jpg",
+        "images/receipts/08-receipt-20261006-wa0027.jpg",
+        "images/receipts/09-receipt-20261006-wa0037.jpg",
+        "images/receipts/10-receipt-20261006-wa0042.jpg"
+      ]
+    };
+
+    const slide = document.getElementById("slide");
+    const counter = document.getElementById("counter");
+    const tabs = document.querySelectorAll(".tabs button");
+    const AUTOPLAY_MS = 4000;
+    let images = sets.onsite;
+    let index = 0;
+    let timer;
+
+    function show(n) {
+      index = (n + images.length) % images.length;
+      slide.src = images[index];
+      slide.alt = "Photo " + (index + 1) + " of " + images.length;
+      counter.textContent = (index + 1) + " / " + images.length;
+      // preload the next one so autoplay doesn't flash
+      new Image().src = images[(index + 1) % images.length];
+    }
+
+    function restartTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => show(index + 1), AUTOPLAY_MS);
+    }
+
+    function go(step) { show(index + step); restartTimer(); }
+
+    tabs.forEach((btn) => btn.addEventListener("click", () => {
+      tabs.forEach((b) => b.classList.toggle("active", b === btn));
+      images = sets[btn.dataset.set];
+      show(0);
+      restartTimer();
+    }));
+
+    document.querySelector(".prev").addEventListener("click", () => go(-1));
+    document.querySelector(".next").addEventListener("click", () => go(1));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "ArrowRight") go(1);
+    });
+
+    // pause while the mouse is over the slideshow
+    const box = document.querySelector(".slideshow");
+    box.addEventListener("mouseenter", () => clearInterval(timer));
+    box.addEventListener("mouseleave", restartTimer);
+
+    show(0);
+    restartTimer();
+  </script>
+</body>
+</html>
